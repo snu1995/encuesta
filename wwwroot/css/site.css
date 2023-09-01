@@ -1,0 +1,56 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    min-height: 100%;
+}
+
+.dropup .hide-toggle.dropdown-toggle::after {
+    display: none !important;
+}
+
+.action-btn-wrapper {
+    pos ition: relative;
+}
+
+footer {
+    position: fixed;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;  
+}
+
+.fixed-action-btn.my-custom-btn {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 20px;
+    padding: 30px;
+    bottom: 60px;
+   
+   
+}
+.in-middle {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+}

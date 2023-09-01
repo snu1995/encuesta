@@ -1,0 +1,101 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = encuesta
+build_property.RootNamespace = encuesta
+build_property.ProjectDir = C:\Users\Otoniel\Downloads\encuesta\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Otoniel\Downloads\encuesta
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Otoniel/Downloads/encuesta/Views/Campo/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcG9cQ3JlYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Otoniel/Downloads/encuesta/Views/Campo/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcG9cRWRpdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Otoniel/Downloads/encuesta/Views/Campo/Eliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcG9cRWxpbWluYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Otoniel/Downloads/encuesta/Views/Campo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Otoniel/Downloads/encuesta/Views/Encuesta/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFcQ3JlYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Otoniel/Downloads/encuesta/Views/Encuesta/DetallesEncuesta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFcRGV0YWxsZXNFbmN1ZXN0YS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Otoniel/Downloads/encuesta/Views/Encuesta/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFcRWRpdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Otoniel/Downloads/encuesta/Views/Encuesta/Eliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFcRWxpbWluYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Otoniel/Downloads/encuesta/Views/Encuesta/Historial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFcSGlzdG9yaWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Otoniel/Downloads/encuesta/Views/Encuesta/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Otoniel/Downloads/encuesta/Views/Encuesta/Success.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFcU3VjY2Vzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Otoniel/Downloads/encuesta/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Otoniel/Downloads/encuesta/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Otoniel/Downloads/encuesta/Views/Login/SingIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cU2luZ0luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Otoniel/Downloads/encuesta/Views/Login/SingUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cU2luZ1VwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Otoniel/Downloads/encuesta/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Otoniel/Downloads/encuesta/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Otoniel/Downloads/encuesta/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Otoniel/Downloads/encuesta/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Otoniel/Downloads/encuesta/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-35e3hel3j5
+
+[C:/Users/Otoniel/Downloads/encuesta/Views/Shared/_LayoutCliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRDbGllbnRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-mbdhw69ahn

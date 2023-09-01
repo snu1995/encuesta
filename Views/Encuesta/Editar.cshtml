@@ -1,0 +1,35 @@
+﻿@model Encuesta
+
+
+@using (Html.BeginForm())
+{
+   <div class="container-fluid mt-5">
+	   <div classs="container mt-5">
+		   <div class="card">
+			   <div class="card-header bg-primary text-light">
+					<h2>Editar Encuesta</h2>
+			   </div>
+			   <div class="card-body">
+					@Html.HiddenFor(model => model.Id)
+					@Html.HiddenFor(model => model.Enlace)
+
+					<div class="form-group mt-3">
+						@Html.LabelFor(model => model.Nombre)
+						@Html.TextBoxFor(model => model.Nombre, new { @class = "form-control" })
+					</div>
+					<div class="form-group mt-3 mb-3">
+						@Html.LabelFor(model => model.Descripcion)
+						@Html.TextAreaFor(model => model.Descripcion, new { @class = "form-control" })
+					</div>
+
+			   </div>
+			   <div class="card-footer">
+
+					<button type="submit" class="mt-3 btn btn-primary float-start">Guardar</button>
+					<a class="mt-3 btn btn-secondary float-end" href="@Url.Action("Index","Encuesta")">Cancelar</a>
+			   </div>
+		   </div>
+
+	   </div>
+   </div>
+}

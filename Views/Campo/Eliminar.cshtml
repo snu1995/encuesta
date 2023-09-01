@@ -1,0 +1,12 @@
+﻿@model Campo
+
+<h2>Eliminar Campo</h2>
+
+<p>¿Estás seguro de que deseas eliminar el campo "@Model.Nombre"?</p>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.Id)
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+}

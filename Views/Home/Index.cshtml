@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+   
+   
+    <div class="container-fluid mt5">
+        <div class="container mt-5">
+        <div class="card">
+            <div class="card-header bg-primary text-light">
+                <h1> Bienvenido @ViewData["nombreUsuario"]</h1>
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-evenly">
+                    
+                        <a class="btn btn-primary text-light" href="@Url.Action("Index","Encuesta")">Ver Enuestas</a>
+                  
+                        <a class="btn btn-primary text-light" href="@Url.Action("Crear","Encuesta")">Crear Encuesta</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+      
+    </div>
+
+

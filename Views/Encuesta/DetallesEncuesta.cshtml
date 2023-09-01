@@ -1,0 +1,214 @@
+﻿@using encuesta.Controllers;
+@using encuesta.Services;
+@model EncuestaDTO
+
+@{
+    Layout = "~/Views/Shared/_LayoutCliente.cshtml";
+    ViewBag.Title = "Detalles de la Encuesta: " + Model.Nombre;
+}
+
+<form asp-controller="Encuesta" asp-action="DetallesEncuesta" method="post">
+
+
+    @if (Model.Campos == null || Model.Campos.Count == 0)
+                    {
+                             <div class="container-fluid">
+                            <div class="container mt-5">
+                            <div class="card">
+                            <div class="card-header bg-primary text-light">
+                                <h2>@Model.Nombre</h2>
+                            </div>
+                            <div class="card-body alert-warning w-100">
+                                <p class="w-100 mt-5 mb-5 fs-4 text-center">No se encontraron preguntas en esta encuesta</p>
+                            </div>
+             
+                            </div>
+                            </div>
+                            </div>
+                        
+                    } else
+                    {
+                        <div class="container-fluid">
+                        <div class="container mt-5">
+                         <div class="card">
+                         <div class="card-header bg-primary text-light">
+                            <h2>@Model.Nombre</h2>
+                         </div>
+                         <div class="card-body">
+                        <div class="card-title">
+                            @Model.Descripcion
+                            <hr />
+                        </div>
+                        <div class="form-group mt-3">
+                            <label class="mb-2">Nombre <span class="text-danger">*</span></label>
+                            @Html.TextBoxFor(model => model.Respuestas[0].NombrePersona, new { @class = "form-control", required = "required" })
+                            <div class="invalid-feedback">
+                                Este campo es requerido.
+                            </div>
+                        </div>
+                   
+
+                    <!-- start for-->
+                    @for (int i = 0; i < Model.Campos.Count; i++)
+                    {
+                        var campo = Model.Campos[i];
+                        int campoID = campo.Id;
+                        int encuestaID = campo.EncuestaId;
+
+                        <input type="hidden" name="Respuestas[@i].EncuestaId" value="@encuestaID" />
+                        <input type="hidden" name="Respuestas[@i].CampoId" value="@campoID" />
+
+
+                        <fieldset class="step">
+                            <div class="form-group mt-3">
+                                <label class="mb-2">@campo.Titulo  <span class="text-danger">@((campo.EsRequerido) ? "*" : "")</span></label>
+                                @if (campo.TipoCampoId == 0)
+                                {
+                                    @Html.TextBoxFor(model => model.Respuestas[i].Valor, new { @class = "form-control", required = "required" })
+                                    <div class="invalid-feedback">
+                                        Este campo es requerido.
+                                    </div>
+
+
+                                }
+                                else if (campo.TipoCampoId == 1)
+                                {
+                                    @Html.TextBoxFor(model => model.Respuestas[i].Valor, new { @class = "form-control", required = "required", type = "number" })
+                                    <div class="invalid-feedback">
+                                        Este campo es requerido.
+                                    </div>
+                                }
+                                else if (campo.TipoCampoId == 2)
+                                {
+                                    @Html.TextBoxFor(model => model.Respuestas[i].Valor, new { @class = "form-control", required = "required", type = "date" })
+                                    <div class="invalid-feedback">
+                                        Este campo es requerido.
+                                    </div>
+                                }
+                            </div>
+
+                              </fieldset>
+
+
+                    }
+                    <!-- fin for-->
+                       </div>
+                <div class="card-footer">
+                        <button title="Siguiente pregunta" type="button" class="floata-start mt-3 next btn btn-info"><i class="fa-solid fa-right-long fs-6"></i></button>
+
+                    <button type="button" class="float-end btn btn-primary mt-3 save" style="display: none;">
+                        Responder Encuesta
+                     </button>
+                </div>
+            </div>
+        </div>
+    </div>
+                   }
+             
+  </form>
+
+    @section Scripts {
+
+    <script>
+        
+        $(document).ready(function () {
+            var current = 0;
+            var steps = $(".step");
+            var nextButton = $(".next");
+            var previousButton = $(".previous");
+            var saveButton = $(".save");
+
+            // Inicialmente ocultar todos los pasos excepto el primero
+            steps.not(":first").hide();
+
+            // Ocultar el botón "Previous" en el primer paso
+            previousButton.hide();
+
+            // ... Tu código JavaScript actual ...
+
+            nextButton.click(function () {
+            var currentStep = steps.eq(current);
+            var inputsInStep = currentStep.find('input[type="text"], input[type="number"], input[type="date"]');
+
+            var isStepValid = true;
+            inputsInStep.each(function () {
+                if ($(this).val() === "") {
+                    isStepValid = false;
+                    return false; // Detener el bucle al encontrar un campo vacío
+                }
+            });
+
+            if (!isStepValid) {
+                alert('Por favor, completa todos los campos antes de continuar.');
+                return;
+            }
+
+            // Si todos los campos están completos, proceder con la llamada AJAX
+                var respuestas = {
+                    EncuestaId: $("input[name='Respuestas[" + current + "].EncuestaId']").val(),
+                    CampoId: $("input[name='Respuestas[" + current + "].CampoId']").val(),
+                    Valor: $("input[name='Respuestas[" + current + "].Valor']").val(),
+                    NombrePersona: $("input[name='Respuestas[0].NombrePersona']").val()
+                };
+
+            $.ajax({
+                type: 'POST',
+                    url: '@Url.Action("DetallesEncuesta", "Encuesta")', // Asegúrate de tener la ruta correcta aquí
+                    data: respuestas,
+                    success: function (response) {
+                    // Aquí puedes actualizar la vista o realizar acciones necesarias
+                    // Por ejemplo, podrías mostrar la siguiente pregunta en algún contenedor.
+
+                    steps.eq(current).hide();
+                    current++;
+                    steps.eq(current).show();
+
+                    // Mostrar el botón "Previous" si no estamos en el primer paso
+                    if (current > 0) {
+                        previousButton.show();
+                    }
+
+                    // Ocultar el botón "Next" si estamos en el último paso
+                    if (current === steps.length - 1) {
+                      
+                            saveButton.show();
+                            nextButton.hide();
+                        } else {
+                            saveButton.hide();
+                            nextButton.show();
+                        }
+
+                },
+                error: function () {
+                        alert('Hubo un error al cargar la siguiente pregunta.');
+                    }
+                });
+            });
+            saveButton.click(function () {
+                var respuestas = {
+                    EncuestaId: $("input[name='Respuestas[" + current + "].EncuestaId']").val(),
+                    CampoId: $("input[name='Respuestas[" + current + "].CampoId']").val(),
+                    Valor: $("input[name='Respuestas[" + current + "].Valor']").val(),
+                    NombrePersona: $("input[name='Respuestas[0].NombrePersona']").val()
+                };
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("DetallesEncuesta", "Encuesta")', // Asegúrate de tener la ruta correcta aquí
+                    data: respuestas,
+                    success: function (response) {
+                        window.location.href = '@Url.Action("Success", "Encuesta")';
+
+                    },
+                    error: function () {
+                        alert('Hubo un error al guardar la ultima respuesta.');
+                    }
+                });
+            });
+        });
+    </script>
+   
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+}
+
+                               
